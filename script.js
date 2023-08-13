@@ -7,11 +7,15 @@ function renderBoard(size) {
         let newCell = document.createElement("div")
         newCell.classList.add("cell")
         newCell.style.flexBasis = `${100/size}%`
+        newCell.addEventListener('mouseover', paint)
         cells.push(newCell)
     }
     containerDiv.replaceChildren(...cells)
+    
 }
 
-
+function paint(e){
+    this.style.backgroundColor = "white"
+}
 
 renderBoard(9)
