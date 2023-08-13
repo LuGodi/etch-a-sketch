@@ -9,17 +9,23 @@
     justify-content: center;
 }
 .menu {
-    background-color:#7b7b7b;
     display:flex;
     flex-direction: column;
     justify-content: center;
 }
 .menu button {
-    height:50px;
-    width:50px;
+    height:80px;
+    width:80px;
     color:white;
     border:3px solid white
 
+}
+
+.size-button {
+    margin-bottom: auto;
+}
+.random-mode-button {
+    margin-bottom:auto;
 }
 .container {
     display:flex;
