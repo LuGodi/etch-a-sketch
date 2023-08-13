@@ -4,7 +4,23 @@
     padding: 0;
     background-color: #121212;
 }
+.main {
+    display: flex;
+    justify-content: center;
+}
+.menu {
+    background-color:#7b7b7b;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.menu button {
+    height:50px;
+    width:50px;
+    color:white;
+    border:3px solid white
 
+}
 .container {
     display:flex;
     flex-wrap: wrap;
