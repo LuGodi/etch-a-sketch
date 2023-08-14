@@ -1,6 +1,8 @@
 const sizeButton = document.querySelector(".size-button")
 const rainbowButton = document.querySelector(".rainbow-mode-button")
 const randomButton = document.querySelector(".random-mode-button")
+const removeGridButton = document.querySelector(".remove-grid-button")
+const clearCanvasButton = document.querySelector(".clear-canvas-button")
 sizeButton.addEventListener("click", (e)=>
 {   
     let value = prompt("choose a size between 1 and 100 and 0 to cancel")
@@ -13,7 +15,8 @@ sizeButton.addEventListener("click", (e)=>
     }
   
 })
-
+clearCanvasButton.addEventListener("click", clearCanvas)
+removeGridButton.addEventListener("click",removeGrid)
 rainbowButton.addEventListener("click",enterRainbowMode)
 randomButton.addEventListener("click", enterRandomMode)
 function renderBoard(size) {
@@ -30,6 +33,14 @@ function renderBoard(size) {
     }
     containerDiv.replaceChildren(...cells)
     
+}
+function clearCanvas() {
+    let grid = document.querySelectorAll(".cell")
+    grid.forEach(cell=>cell.style.backgroundColor = "")
+}
+function removeGrid() {
+    let grid = document.querySelectorAll(".cell")
+    grid.forEach(cell => cell.style.border="0px")
 }
 
 function paint(e, color = "hsl(0,0%,100%)"){
