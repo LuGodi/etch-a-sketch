@@ -27,6 +27,11 @@
 .random-mode-button {
     margin-bottom:auto;
 }
+button.active{
+    background-color:white;
+    color:black;
+    box-shadow:inset 5px 5px 0px #121212
+}
 .container {
     display:flex;
     flex-wrap: wrap;

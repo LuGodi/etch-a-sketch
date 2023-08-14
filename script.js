@@ -1,4 +1,6 @@
 const sizeButton = document.querySelector(".size-button")
+const rainbowButton = document.querySelector(".rainbow-mode-button")
+const randomButton = document.querySelector(".random-mode-button")
 sizeButton.addEventListener("click", (e)=>
 {   
     let value = prompt("choose a size between 1 and 100 and 0 to cancel")
@@ -11,6 +13,9 @@ sizeButton.addEventListener("click", (e)=>
     }
   
 })
+
+rainbowButton.addEventListener("click",enterRainbowMode)
+randomButton.addEventListener("click", enterRandomMode)
 function renderBoard(size) {
     const cellNumber = size ** 2;
     const containerDiv = document.querySelector(".container")
@@ -27,8 +32,34 @@ function renderBoard(size) {
     
 }
 
-function paint(e){
-    this.style.backgroundColor = "white"
+function paint(e, color = "hsl(0,0%,100%)"){
+    if(rainbowButton.classList.contains("active")) {
+        
+    }
+    else if(randomButton.classList.contains("active")) {
+    let R = Math.floor(Math.random()*251)
+    let G =  Math.floor(Math.random()*251)
+    let B =  Math.floor(Math.random()*251)
+    color =  `RGB(${R},${G},${B}`
+    }
+    this.style.backgroundColor = color
+}
+
+function enterRainbowMode(e) {
+if (randomButton.classList.contains("active")) randomButton.classList.remove("active")
+rainbowButton.classList.toggle("active")
+if (rainbowButton.classList.contains("active")) {
+//TODO
+//    for (let i=0;i<361; i++)
+//    {
+//     color = `hsl(${i}, 100%, 50%)`
+//    }
+}
+}
+
+function enterRandomMode(e) {
+    if(rainbowButton.classList.contains("active")) rainbowButton.classList.remove("active")
+    randomButton.classList.toggle("active")
 }
 
 renderBoard(9)
