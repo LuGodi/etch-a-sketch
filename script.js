@@ -3,6 +3,10 @@ const rainbowButton = document.querySelector(".rainbow-mode-button")
 const randomButton = document.querySelector(".random-mode-button")
 const toggleGridButton = document.querySelector(".toggle-grid-button")
 const clearCanvasButton = document.querySelector(".clear-canvas-button")
+const directionHandButton = document.querySelector(".toggle-hand-button")
+let currentRainbowColor = 0
+
+directionHandButton.addEventListener("click",changeDirection)
 sizeButton.addEventListener("click", (e)=>
 {   
     let value = prompt("choose a size between 1 and 100 and 0 to cancel")
@@ -73,4 +77,9 @@ function enterRandomMode(e) {
     randomButton.classList.toggle("active")
 }
 
+function changeDirection(e) {
+    const mainDiv = document.querySelector(".main")
+    mainDiv.style.flexDirection === "row" || mainDiv.style.flexDirection === "" ? mainDiv.style.flexDirection = "row-reverse" : mainDiv.style.flexDirection = "row"
+    directionHandButton.textContent.includes("Left-Hand") ? directionHandButton.textContent = "Change to Right-Hand mode" : directionHandButton.textContent = "Change to Left-Hand mode"
+}
 renderBoard(9)
