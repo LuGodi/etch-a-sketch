@@ -49,7 +49,12 @@ function toggleGrid() {
 
 function paint(e, color = "hsl(0,0%,100%)"){
     if(rainbowButton.classList.contains("active")) {
-        
+        color = `hsl(${currentRainbowColor}deg,100%,50%`
+        currentRainbowColor+=10
+        console.log(currentRainbowColor)
+        if (currentRainbowColor >= 361) {
+            currentRainbowColor = 0
+        }
     }
     else if(randomButton.classList.contains("active")) {
     let R = Math.floor(Math.random()*251)
