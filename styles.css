@@ -1,12 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@700&display=swap');
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     background-color: #121212;
+    
 }
 .main {
     display: flex;
     justify-content: center;
+    margin-top:30px;
+    height:fit-content;
+}
+.title {
+    color:white;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    font-size:25px;
+    letter-spacing:15px;
+    font-family: 'Handjet', monospace;
+    align-self: center;
+    cursor: none;
+    padding-left:10px;
+    padding-right:10px;
+    height:fit-content;
+
 }
 .menu {
     display:flex;
@@ -17,10 +35,14 @@
     height:80px;
     width:80px;
     color:white;
-    border:3px solid white
+    border:3px solid white;
+    font-family:monospace
 
 }
 
+.toggle-hand-button {
+    margin-top: auto;
+}
 .size-button {
     
 }
@@ -39,8 +61,8 @@ button.active{
     display:flex;
     flex-wrap: wrap;
     border:5px solid white;
-    width:800px;
-    height:800px;
+    width:600px;
+    height:600px;
     margin:auto
 }
 .cell {
